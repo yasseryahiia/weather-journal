@@ -34,16 +34,3 @@ function callback(req,res){
     projectData = req.body;
     res.send(projectData);
 }
-// Post a weather 
-app.post("/weather",addWeather);
-
-function addWeather(req,res){
-
-    const weatherInfo = {
-        temperature:req.body.temperature,
-        date:req.body.date,
-        feelings:req.body.feelings
-    }
-    projectData.push(weatherInfo);
-    console.log(projectData);
-}
