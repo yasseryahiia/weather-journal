@@ -50,7 +50,7 @@ const updateUI = async()=>{
 // click event 
 document.getElementById("generate").addEventListener("click",()=>{
     const zipCode = document.getElementById("zip").value;
-    const feelings = document.getElementById("feeling").value;
+    const feelings = document.getElementById("feelings").value;
     if(zipCode.trim() === "" || feelings.trim() === ""){
         alert("zip code and feelings are required");
         return;
