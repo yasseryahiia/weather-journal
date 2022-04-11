@@ -51,7 +51,10 @@ const updateUI = async()=>{
 document.getElementById("generate").addEventListener("click",()=>{
     const zipCode = document.getElementById("zip").value;
     const feelings = document.getElementById("feeling").value;
-    if(zipCode.trim("") === "" || feelings.trim("") === "")
+    if(zipCode.trim() === "" || feelings.trim() === ""){
+        alert("zip code and feelings are required");
+        return;
+    }
     getWeather(apiURL,zipCode,apiKey)
     .then(data =>postWeather({date: newDate,temp: data.main.temp ,feelings})
     )
