@@ -11,7 +11,8 @@ const getWeather = async(basicUrl,zipCode,apiKey)=>{
         basicUrl + zipCode +"&appid="+apiKey+"units=metric")
     try{
         const data = await fetchWeather.json();
-        return data
+        console.log(data);
+        return data;
     }catch(error){
         console.log("error",error.message);
     }
