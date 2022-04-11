@@ -1,23 +1,24 @@
 /* Global Variables */
-    let apiUrl = "https://api.openweathermap.org/data/2.5/weather?"
-    let apiKey = "1d660ce376e25c94d06541caf18c5147";
+    let apiUrl = " https://api.openweathermap.org/data/2.5/weather?zip="
+    const apiKey = "1d660ce376e25c94d06541caf18c5147";
 // Create a new date instance dynamically with JS
 let d = new Date();
 let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
 
+// get weather request
 const getWeather = async(basicUrl,zipCode,apiKey)=>{
-    const response = await fetch(
+    const fetchWeather = await fetch(
         basicUrl + zipCode +"&appid="+apiKey+"units=metric")
     try{
-        const data = await response.json();
+        const data = await fetchWeather.json();
         return data
     }catch(error){
-        console.log("error",error);
+        console.log("error",error.message);
     }
 }
-
-const postWeather= async (url='',data={})=>{
-    const response = await fetch(url,{
+// post weather request
+const postWeather= async (data={})=>{
+    const response = await fetch("/sendData",{
         method :"POST",
         credentials:"same-origin",
         headers:{
@@ -36,6 +37,7 @@ const postWeather= async (url='',data={})=>{
 const updateUI = async()=>{
     const response = await fetch("/all")
     try{
+    const zipCode = document.getElementById("zip").innerHTML;
 
     }catch(error){
         console.log("error",error);
