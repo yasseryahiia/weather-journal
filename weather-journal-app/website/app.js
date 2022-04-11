@@ -35,7 +35,7 @@ const postWeather= async (data={})=>{
     }
 }
 const updateUI = async()=>{
-    const response = await fetch("/all")
+    const response = await fetch("/getData")
     try{
     const zipCode = document.getElementById("zip").innerHTML;
 
