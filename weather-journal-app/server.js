@@ -17,7 +17,7 @@ app.use(cors());
 // Initialize the main project folder
 app.use(express.static('website'));
 // Set port
-const port = 8000;
+const port = 4000;
 // Setup Server
 const server = app.listen(port , ()=>{console.log(`running on local host at http://localhost:${port}`)});
 
